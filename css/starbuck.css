@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+:root {
+  --black: #333;
+  --green: #017143;
+  --white: #fff;
+  --white2: #fff;
+  --black2: #333;
+  --green2: #017143;
+}
+
+.dark {
+  --black: #fff;
+  --green: #017143;
+  --white: #333;
+  --green2: #00ff9b;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: var(--white);
+}
+
+header {
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+header .logo {
+  max-width: 70px;
+  position: relative;
+  z-index: 11;
+}
+
+header ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+header ul li a {
+  display: inline-block;
+  padding: 0 20px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+header ul li a:hover {
+  color: var(--green);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--black);
+}
+
+.textBox {
+  max-width: 600px;
+  margin-right: 20px;
+}
+
+.textBox h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.textBox h2 span {
+  font-size: 1.2em;
+  color: var(--green2);
+}
+
+.textBox a {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: var(--green);
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: var(--white2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.textBox a:hover {
+  background-color: green;
+}
+
+.imgBox::before {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  content: "";
+  background-color: var(--green);
+  border-radius: 50%;
+}
+
+.content .imgBox {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .imgBox img {
+  width: 500px;
+  z-index: 1;
+  /* transform: rotate(-10deg); */
+}
+
+.themeSwitch {
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: var(--black);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.themeSwitch:before {
+  content: "\f186";
+  font-family: fontAwesome;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.themeSwitch.active::before {
+  content: "\f185";
+  font-family: fontAwesome;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.open,
+.close {
+  font-size: 30px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 30px;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+  font-family: fontAwesome;
+  z-index: 10;
+}
+.open::before {
+  content: "\f0c9";
+}
+.open.active::before {
+  content: "\f00d";
+  position: fixed;
+}
+
+.social ul {
+  list-style: none;
+  display: flex;
+}
+
+.social ul li {
+}
+
+.social ul li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.social ul li a:hover {
+  background-color: var(--green);
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 20px;
+  }
+  header {
+    padding: 0 10px;
+  }
+  .content {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+  .content .imgBox {
+    width: 98%;
+  }
+  .content .imgBox img {
+    width: 350px;
+  }
+  .imgBox::before {
+    width: 250px;
+    height: 250px;
+  }
+  .textBox {
+    max-width: 95%;
+  }
+  .textBox h2 {
+    font-size: 30px;
+  }
+  .menu {
+    display: none;
+  }
+  .menu.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+  .menuActive a {
+    color: var(--black);
+    padding: 10px;
+  }
+  .open {
+    display: block;
+  }
+  .close {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    color: var(--black);
+  }
+}
